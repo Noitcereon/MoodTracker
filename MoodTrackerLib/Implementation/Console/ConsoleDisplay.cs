@@ -18,8 +18,6 @@ namespace MoodTrackerLib.Implementation.Console
             SwitchView(UserInput.ViewSelection());
         }
 
-        
-
         public void SwitchView(View selectedView)
         {
             switch (selectedView)
@@ -30,34 +28,19 @@ namespace MoodTrackerLib.Implementation.Console
                     return;
                 case View.Stats:
                     System.Console.Clear();
-                    ShowStats();
+                    ViewHandler.ShowStats();
                     return;
                 case View.AddDay:
                     System.Console.Clear();
-                    ShowAddDay();
+                    ViewHandler.ShowAddDay();
                     return;
                 case View.Options:
                     System.Console.Clear();
-                    ShowOptions();
+                    ViewHandler.ShowOptions();
                     return;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(selectedView), selectedView, null);
             }
-        }
-        
-        private void ShowOptions()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ShowAddDay()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void ShowStats()
-        {
-            throw new NotImplementedException();
         }
     }
 }
