@@ -7,8 +7,15 @@ namespace MoodTrackerLib.Implementation.Console
     {
         public static View ViewSelection()
         {
-            View userInput = (View)Convert.ToInt16(System.Console.ReadKey());
-            return userInput;
+            string userInput = System.Console.ReadLine();
+
+            if (int.TryParse(userInput, out int selection))
+            {
+                View selectedView = (View)selection;
+                return selectedView;
+            }
+
+            return View.Main;
         }
     }
 }

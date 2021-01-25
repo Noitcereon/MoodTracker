@@ -4,9 +4,8 @@ namespace MoodTrackerConsole
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Starting Application!");
             Worker worker = new ();
             worker.Start();
 

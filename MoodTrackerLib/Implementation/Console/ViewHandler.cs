@@ -7,7 +7,7 @@ namespace MoodTrackerLib.Implementation.Console
         public static void ShowMainMenu()
         {
             System.Console.WriteLine($"{Environment.NewLine} " +
-                              $"Choose what to do: ");
+                              $"Enter a number to select command. ");
             System.Console.WriteLine("1. Main");
             System.Console.WriteLine("2. Stats");
             System.Console.WriteLine("3. Add Day");

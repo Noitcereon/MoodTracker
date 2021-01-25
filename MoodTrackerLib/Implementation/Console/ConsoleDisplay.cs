@@ -15,10 +15,13 @@ namespace MoodTrackerLib.Implementation.Console
 
             ViewHandler.ShowMainMenu();
 
-            SwitchView(UserInput.ViewSelection());
+            while (true)
+            {
+                SwitchView(UserInput.ViewSelection());
+            }
         }
 
-        public void SwitchView(View selectedView)
+        public static void SwitchView(View selectedView)
         {
             switch (selectedView)
             {
@@ -39,7 +42,9 @@ namespace MoodTrackerLib.Implementation.Console
                     ViewHandler.ShowOptions();
                     return;
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(selectedView), selectedView, null);
+                    System.Console.WriteLine("That number is not assigned to a command. Try again.\n");
+                    SwitchView(UserInput.ViewSelection());
+                    break;
             }
         }
     }
