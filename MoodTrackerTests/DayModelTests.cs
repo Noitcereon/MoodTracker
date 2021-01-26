@@ -12,18 +12,18 @@ namespace MoodTrackerTests
         [TestInitialize]
         public void Init()
         {
-            _day = new Day(new DateTimeOffset(DateTime.Today.AddDays(-1)), 50);
+            _day = new Day(new DateTimeOffset(DateTime.Today.AddDays(-1)), 5);
         }
 
         [TestMethod]
         public void ConstructorTest()
         {
-            Day day = new Day(new DateTimeOffset(DateTime.Today), 50);
-            Assert.AreEqual(50, day.Points);
+            Day day = new Day(new DateTimeOffset(DateTime.Today), 5);
+            Assert.AreEqual(5, day.Points);
             Assert.AreEqual(DateTime.Today, day.Date);
 
-            Day d2 = new Day(100);
-            Assert.AreEqual(100, d2.Points);
+            Day d2 = new Day(10);
+            Assert.AreEqual(10, d2.Points);
 
             Day d3 = new Day();
             Assert.AreEqual(default, d3.Date);
@@ -32,16 +32,16 @@ namespace MoodTrackerTests
         [TestMethod]
         public void PointsTest()
         {
-            Assert.AreEqual(50, _day.Points);
+            Assert.AreEqual(5, _day.Points);
 
             _day.Points = 1;
             Assert.AreEqual(1, _day.Points);
 
-            _day.Points = 100;
-            Assert.AreEqual(100, _day.Points);
+            _day.Points = 10;
+            Assert.AreEqual(10, _day.Points);
 
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => _day.Points = 0.9);
-            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _day.Points = 100.1);
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => _day.Points = 10.1);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace MoodTrackerLib.Models
             get => _points;
             set
             {
-                if (value >= 1 && value <= 100)
+                if (value >= 1 && value <= 10)
                 {
                     _points = value;
                 }
@@ -39,6 +39,11 @@ namespace MoodTrackerLib.Models
         {
             Date = date;
             Points = points;
+        }
+
+        public override string ToString()
+        {
+            return $"{Date.Date}: {Points}";
         }
     }
 }
