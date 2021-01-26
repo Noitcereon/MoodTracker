@@ -11,7 +11,7 @@ namespace MoodTrackerLib.Implementation.Console
 
         public override void StartUp()
         {
-            System.Console.WriteLine("----- Mood Tracker by Noitcereon -----");
+            Helpers.HighlightMessage("Mood Tracker by Noitcereon");
 
             ViewHandler.ShowMainMenu();
 

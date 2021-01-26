@@ -6,6 +6,7 @@ namespace MoodTrackerLib.Implementation.Console
     {
         public static void ShowMainMenu()
         {
+            Helpers.HighlightMessage("Main Menu");
             System.Console.WriteLine($"{Environment.NewLine} " +
                               $"Enter a number to select command. ");
             System.Console.WriteLine("1. Main");
@@ -16,17 +17,20 @@ namespace MoodTrackerLib.Implementation.Console
         }
         public static void ShowOptions()
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine("Options is not implemented yet.");
+            ShowMainMenu();
         }
 
         public static void ShowAddDay()
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine("Add Day is not implemented yet.");
+            ShowMainMenu();
         }
 
         public static void ShowStats()
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine("Stats are not implemented yet.");
+            ShowMainMenu();
         }
     }
 }
