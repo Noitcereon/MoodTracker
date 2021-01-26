@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using static System.Char;
 
 namespace MoodTrackerLib.Implementation.Console
 {
@@ -9,10 +11,9 @@ namespace MoodTrackerLib.Implementation.Console
             Helpers.HighlightMessage("Main Menu");
             System.Console.WriteLine($"{Environment.NewLine} " +
                               $"Enter a number to select command. ");
-            System.Console.WriteLine("1. Main");
-            System.Console.WriteLine("2. Stats");
-            System.Console.WriteLine("3. Add Day");
-            System.Console.WriteLine("4. Options");
+
+            Helpers.CreateOptions(Enum.GetNames(typeof(ConsoleDisplay.View)));
+
             System.Console.WriteLine();
         }
         public static void ShowOptions()
