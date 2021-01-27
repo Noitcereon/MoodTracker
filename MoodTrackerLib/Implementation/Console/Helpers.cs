@@ -37,7 +37,7 @@ namespace MoodTrackerLib.Implementation.Console
             return output;
         }
 
-        public static void CreateOptions(string [] options)
+        public static int CreateOptions(string [] options)
         {
             int i = 1;
             foreach (string name in options)
@@ -45,6 +45,26 @@ namespace MoodTrackerLib.Implementation.Console
                 System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
                 i++;
             }
+
+            return i;
+        }
+
+        public static int CreateOptions(string[] options, params string[] additionalOptions)
+        {
+            int i = 1;
+            foreach (string name in options)
+            {
+                System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
+                i++;
+            }
+
+            foreach (string name in additionalOptions)
+            {
+                System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
+                i++;
+            }
+
+            return i;
         }
     }
 }
