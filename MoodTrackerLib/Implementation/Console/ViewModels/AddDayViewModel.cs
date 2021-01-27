@@ -15,7 +15,7 @@ namespace MoodTrackerLib.Implementation.Console.ViewModels
             int[] options = { 1, 2, 3, 4, 5, 6 };
             switch (options)
             {
-
+                // not implemented yet.
             }
         }
     }

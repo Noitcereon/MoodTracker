@@ -9,12 +9,11 @@ namespace MoodTrackerConsole
     public class Worker
     {
         private static readonly ConsoleDisplay Display = new ConsoleDisplay();
+
         public void Start()
         {
             Display.StartUp();
         }
-        
-
 
         public void Close()
         {
