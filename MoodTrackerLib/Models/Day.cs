@@ -9,9 +9,12 @@ namespace MoodTrackerLib.Models
 {
     public class Day : IDay
     {
+        public enum DayType { Excellent = 1, Good, Decent, Meh, Bad }
+
         private double _points;
 
         public DateTimeOffset Date { get; set; }
+
 
         public double Points
         {

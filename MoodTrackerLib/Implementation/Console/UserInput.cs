@@ -5,17 +5,16 @@ namespace MoodTrackerLib.Implementation.Console
 {
     public static class UserInput
     {
-        public static View ViewSelection()
+        public static int OptionSelection()
         {
             string userInput = System.Console.ReadLine();
 
             if (int.TryParse(userInput, out int selection))
             {
-                View selectedView = (View)selection;
-                return selectedView;
+                return selection;
             }
 
-            return View.Main;
+            return -1;
         }
     }
 }

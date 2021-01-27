@@ -1,51 +1,62 @@
 ﻿using System;
+using System.Net.Mime;
+using MoodTrackerLib.Implementation.Console.ViewModels;
+using MoodTrackerLib.Implementation.Console.Views;
+using static System.Console;
 
 namespace MoodTrackerLib.Implementation.Console
 {
     public class ConsoleDisplay : BaseDisplay
     {
-        public enum View
-        {
-            Main = 1, Stats, AddDay, Options
-        }
+        public enum View { Main = 1, Stats, AddDay, Options }
+
+        private static View _currentView;
 
         public override void StartUp()
         {
+            Title = "Mood Tracker";
             Helpers.HighlightMessage("Mood Tracker by Noitcereon");
 
-            ViewHandler.ShowMainMenu();
+            MainMenuView.ShowMainMenu();
+            _currentView = MainMenuViewModel.MainMenuSelection(UserInput.OptionSelection());
 
+            AppLoop();
+        }
+
+        public override void Shutdown()
+        {
+            // Save days stats to json file and other stuff?
+        }
+
+        public static void AppLoop()
+        {
             while (true)
             {
-                SwitchView(UserInput.ViewSelection());
+                Clear();
+                switch (_currentView)
+                {
+                    case View.Main:
+                        MainMenuView.ShowMainMenu();
+                        _currentView = MainMenuViewModel.MainMenuSelection(UserInput.OptionSelection());
+                        break;
+                    case View.Stats:
+                        StatsView.ShowStats();
+                        StatsViewModel.StatsSelection();
+                        break;
+                    case View.AddDay:
+                        AddDayView.ShowAddDay();
+                        AddDayViewModel.AddDaySelection();
+                        break;
+                    case View.Options:
+                        OptionsView.ShowOptions();;
+                        //OptionsVM.OptionsSelection();
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
 
-        public static void SwitchView(View selectedView)
-        {
-            switch (selectedView)
-            {
-                case View.Main:
-                    System.Console.Clear();
-                    ViewHandler.ShowMainMenu();
-                    return;
-                case View.Stats:
-                    System.Console.Clear();
-                    ViewHandler.ShowStats();
-                    return;
-                case View.AddDay:
-                    System.Console.Clear();
-                    ViewHandler.ShowAddDay();
-                    return;
-                case View.Options:
-                    System.Console.Clear();
-                    ViewHandler.ShowOptions();
-                    return;
-                default:
-                    System.Console.WriteLine("That number is not assigned to a command. Try again.\n");
-                    SwitchView(UserInput.ViewSelection());
-                    break;
-            }
-        }
+        
     }
 }

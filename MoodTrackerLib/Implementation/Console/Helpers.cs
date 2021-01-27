@@ -8,6 +8,10 @@ namespace MoodTrackerLib.Implementation.Console
 {
     public class Helpers
     {
+        /// <summary>
+        /// Encapsulates a message with --- on both sides.
+        /// </summary>
+        /// <param name="message"></param>
         public static void HighlightMessage(string message)
         {
             System.Console.WriteLine($"--- {message} ---");
@@ -33,10 +37,10 @@ namespace MoodTrackerLib.Implementation.Console
             return output;
         }
 
-        public static void CreateOptions(string [] enumNames)
+        public static void CreateOptions(string [] options)
         {
             int i = 1;
-            foreach (var name in enumNames)
+            foreach (string name in options)
             {
                 System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
                 i++;
