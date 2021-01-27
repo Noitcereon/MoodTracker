@@ -14,9 +14,7 @@ namespace MoodTrackerLib.Implementation.Console
 
         public override void StartUp()
         {
-            Title = "Mood Tracker";
-            Helpers.HighlightMessage("Mood Tracker by Noitcereon");
-
+            Title = "Mood Tracker by Noitcereon";
             MainMenuView.ShowMainMenu();
             _currentView = MainMenuViewModel.MainMenuSelection(UserInput.OptionSelection());
 
@@ -25,10 +23,10 @@ namespace MoodTrackerLib.Implementation.Console
 
         public override void Shutdown()
         {
-            // Save days stats to json file and other stuff?
+            // Save stats to json file and other stuff?
         }
 
-        public static void AppLoop()
+        private static void AppLoop()
         {
             while (true)
             {

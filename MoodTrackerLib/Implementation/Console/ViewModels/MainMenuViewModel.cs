@@ -8,6 +8,7 @@ using static MoodTrackerLib.Implementation.Console.Views.MainMenuView;
 using static MoodTrackerLib.Implementation.Console.Views.StatsView;
 using static MoodTrackerLib.Implementation.Console.Views.OptionsView;
 using static MoodTrackerLib.Implementation.Console.Views.AddDayView;
+using static System.Console;
 
 namespace MoodTrackerLib.Implementation.Console.ViewModels
 {
