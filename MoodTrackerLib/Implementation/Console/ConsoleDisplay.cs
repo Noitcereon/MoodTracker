@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net.Mime;
-using MoodTrackerLib.Implementation.Console.ViewModels;
 using MoodTrackerLib.Implementation.Console.Views;
 using static System.Console;
 
@@ -11,12 +9,13 @@ namespace MoodTrackerLib.Implementation.Console
         public enum View { Main = 1, Stats, AddDay, Options }
 
         private static View _currentView;
+        private readonly AddDayView _addDayView = new AddDayView();
 
         public override void StartUp()
         {
             Title = "Mood Tracker by Noitcereon";
             MainMenuView.ShowMainMenu();
-            _currentView = MainMenuViewModel.MainMenuSelection(UserInput.OptionSelection());
+            _currentView = MainMenuView.MainMenuSelection(UserInput.OptionSelection());
 
             AppLoop();
         }
@@ -26,7 +25,7 @@ namespace MoodTrackerLib.Implementation.Console
             // Save stats to json file and other stuff?
         }
 
-        private static void AppLoop()
+        private void AppLoop()
         {
             while (true)
             {
@@ -35,15 +34,15 @@ namespace MoodTrackerLib.Implementation.Console
                 {
                     case View.Main:
                         MainMenuView.ShowMainMenu();
-                        _currentView = MainMenuViewModel.MainMenuSelection(UserInput.OptionSelection());
+                        _currentView = MainMenuView.MainMenuSelection(UserInput.OptionSelection());
                         break;
                     case View.Stats:
                         StatsView.ShowStats();
-                        StatsViewModel.StatsSelection();
+                        StatsView.StatsSelection();
                         break;
                     case View.AddDay:
                         AddDayView.ShowAddDay();
-                        AddDayViewModel.AddDaySelection();
+                        _currentView = _addDayView.AddDaySelection();
                         break;
                     case View.Options:
                         OptionsView.ShowOptions();;

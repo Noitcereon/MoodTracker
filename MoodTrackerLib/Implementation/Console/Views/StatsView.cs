@@ -14,5 +14,10 @@ namespace MoodTrackerLib.Implementation.Console.Views
             WriteLine("Stats are not implemented yet.");
             MainMenuView.ShowMainMenu();
         }
+
+        public static void StatsSelection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

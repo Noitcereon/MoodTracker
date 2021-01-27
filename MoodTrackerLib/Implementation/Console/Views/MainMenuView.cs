@@ -29,13 +29,13 @@ namespace MoodTrackerLib.Implementation.Console.Views
                     ShowMainMenu();
                     break;
                 case View.Stats:
-                    ShowStats();
+                    StatsView.ShowStats();
                     break;
                 case View.AddDay:
-                    ShowAddDay();
+                    AddDayView.ShowAddDay();
                     break;
                 case View.Options:
-                    ShowOptions();
+                    OptionsView.ShowOptions();
                     break;
                 default:
                     WriteLine("That number is not assigned to a command. Try again.\n");
