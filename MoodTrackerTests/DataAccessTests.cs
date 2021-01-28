@@ -17,17 +17,29 @@ namespace MoodTrackerTests
         [TestMethod]
         public void GetDaysTest()
         {
-            Assert.AreEqual(typeof(List<IDay>),_dataAccess.GetDays().GetType());
-            
+            Assert.AreEqual(typeof(List<IDay>), _dataAccess.GetDays().GetType());
         }
 
+        [TestMethod]
         public void AddDaysTest()
         {
             int before = _dataAccess.GetDays().Count;
-            _dataAccess.AddDay(new Day(80));
+
+            _dataAccess.AddDay(new Day(8));
             int after = _dataAccess.GetDays().Count;
-            Assert.AreEqual(before, after+1);
+
+            Assert.AreEqual(before + 1, after);
+
             _dataAccess.RemoveLastDayEntry();
+        }
+
+        [TestMethod]
+        public void RemoveLastDayEntry()
+        {
+            _dataAccess.AddDay(new Day(5));
+            int before = _dataAccess.GetDays().Count;
+            _dataAccess.RemoveLastDayEntry();
+            Assert.AreEqual(before - 1, _dataAccess.GetDays().Count);
         }
     }
 }
