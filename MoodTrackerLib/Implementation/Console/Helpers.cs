@@ -17,7 +17,6 @@ namespace MoodTrackerLib.Implementation.Console
             System.Console.WriteLine($"--- {message} ---");
         }
 
-
         /// <summary>
         /// Creates a string with spaces placed between each capitalized letter after the first of the string.
         /// </summary>
@@ -39,32 +38,27 @@ namespace MoodTrackerLib.Implementation.Console
 
         public static int CreateOptions(string [] options)
         {
-            int i = 1;
+            int noOfOptions = 1;
             foreach (string name in options)
             {
-                System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
-                i++;
+                System.Console.WriteLine($"{noOfOptions}: {SpaceSeperatePascalName(name)}");
+                noOfOptions++;
             }
 
-            return i;
+            return noOfOptions;
         }
 
         public static int CreateOptions(string[] options, params string[] additionalOptions)
         {
-            int i = 1;
-            foreach (string name in options)
-            {
-                System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
-                i++;
-            }
+            int noOfOptions = CreateOptions(options);
 
             foreach (string name in additionalOptions)
             {
-                System.Console.WriteLine($"{i}: {SpaceSeperatePascalName(name)}");
-                i++;
+                System.Console.WriteLine($"{noOfOptions}: {SpaceSeperatePascalName(name)}");
+                noOfOptions++;
             }
 
-            return i;
+            return noOfOptions;
         }
     }
 }
