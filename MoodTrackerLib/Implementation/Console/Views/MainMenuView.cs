@@ -39,7 +39,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
                     break;
                 default:
                     WriteLine("That number is not assigned to a command. Try again.\n");
-                    MainMenuSelection(UserInput.OptionSelection());
+                    selectedView = MainMenuSelection(UserInput.OptionSelection());
                     break;
             }
             return selectedView;

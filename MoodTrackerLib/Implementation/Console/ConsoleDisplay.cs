@@ -49,7 +49,9 @@ namespace MoodTrackerLib.Implementation.Console
                         //OptionsVM.OptionsSelection();
                         break;
                     default:
-                        throw new ArgumentOutOfRangeException();
+                        WriteLine("Invalid input.");
+                        MainMenuView.MainMenuSelection(UserInput.OptionSelection());
+                        break;
                 }
             }
         }

@@ -10,12 +10,14 @@ namespace MoodTrackerLib.Implementation
 {
     public class DataAccess
     {
-        private static readonly List<IDay> Days = new List<IDay>();
+        private static readonly List<IDay> Days = LoadDays();
         // this class should take data and make stats out of it, so it can be used in the application.
 
-        private void LoadDays()
+        private static List<IDay> LoadDays()
         {
             // TODO: Load stats from json file.
+            List<IDay> output = new List<IDay>();
+            return output;
         }
 
         public List<IDay> GetDays()
@@ -30,6 +32,11 @@ namespace MoodTrackerLib.Implementation
             Days.Add(day);
             if (beforeAdd < Days.Count) success = true;
             return success;
+        }
+
+        public void RemoveLastDayEntry()
+        {
+            Days.RemoveAt(Days.Count-1);
         }
     }
 }

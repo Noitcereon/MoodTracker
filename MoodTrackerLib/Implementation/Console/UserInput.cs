@@ -7,11 +7,17 @@ namespace MoodTrackerLib.Implementation.Console
     {
         public static int OptionSelection()
         {
-            string userInput = System.Console.ReadLine();
-
-            if (int.TryParse(userInput, out int selection))
+            try
             {
-                return selection;
+                string userInput = System.Console.ReadLine();
+                if (int.TryParse(userInput, out int selection))
+                {
+                    return selection;
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                System.Console.WriteLine("Invalid input.");
             }
 
             return -1;

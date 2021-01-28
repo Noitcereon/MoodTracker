@@ -20,9 +20,6 @@ namespace MoodTrackerLib.Implementation.Console.Views
             WriteLine($"Current date: {DateTime.Now.Date.ToShortDateString()}");
             WriteLine();
             Helpers.CreateOptions(Enum.GetNames(typeof(Day.DayMood)), "Change Date", "Main Menu");
-
-            // TODO: remove below message, when applicable.
-            WriteLine("Add Day is still a work-in-progress");
             WriteLine();
         }
 
@@ -33,33 +30,45 @@ namespace MoodTrackerLib.Implementation.Console.Views
             switch (userInput)
             {
                 case 1:
-                    WriteLine("Case 1");
                     DataAccess.AddDay(new Day(10));
+                    DayAddedMsg(Day.DayMood.Excellent);
                     break;
                 case 2:
                     DataAccess.AddDay(new Day(7.5));
+                    DayAddedMsg(Day.DayMood.Good);
                     break;
                 case 3:
                     DataAccess.AddDay(new Day(5));
+                    DayAddedMsg(Day.DayMood.Decent);
                     break;
                 case 4:
                     DataAccess.AddDay(new Day(3.5));
+                    DayAddedMsg(Day.DayMood.Meh);
                     break;
                 case 5:
                     DataAccess.AddDay(new Day(1));
+                    DayAddedMsg(Day.DayMood.Bad);
                     break;
                 case 6:
                     // Change date option
-                    throw new NotImplementedException();
+                    DataAccess.RemoveLastDayEntry(); // temporary, can remove.
+                    break;
+                    //throw new NotImplementedException();
                 case 7:
                     return ConsoleDisplay.View.Main;
                 default:
-                    WriteLine("Try again.");
+                    WriteLine("Invalid input for AddDay, try again.");
                     AddDaySelection();
                     break;
             }
 
-            return ConsoleDisplay.View.AddDay;
+            return ConsoleDisplay.View.Main;
+        }
+
+        private void DayAddedMsg(Day.DayMood mood)
+        {
+            WriteLine($"{mood} day added. Press any key redirect to continue (redirect to main menu.)");
+            ReadKey();
         }
     }
 }
