@@ -17,7 +17,7 @@ namespace MoodTrackerLib.Implementation.Console
             }
             catch (ArgumentException ex)
             {
-                System.Console.WriteLine("Invalid input.");
+                System.Console.WriteLine($"Invalid input for {ex.ParamName}");
             }
 
             return -1;

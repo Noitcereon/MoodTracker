@@ -41,5 +41,17 @@ namespace MoodTrackerTests
             _dataAccess.RemoveLastDayEntry();
             Assert.AreEqual(before - 1, _dataAccess.GetDays().Count);
         }
+
+        [TestMethod]
+        public void RemoveOldEntryIfSameDayTest()
+        {
+            // TODO: RemoveOldEntryIfSameDay test
+            // 1. If Days contains an entry for today it should return true
+            // 2. if Not, it should return true.
+            // 3. If Days conatain an entry for today and it fails to remove it, it should return false.
+
+            //_dataAccess.GetDays().Find(x => PIHelpers.IsToday(x.Date));
+            //Assert.AreEqual(true, _dataAccess.RemoveOldEntryIfTheSameDay());
+        }
     }
 }
