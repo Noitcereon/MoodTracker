@@ -12,7 +12,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
 {
     public class AddDayView
     {
-        private readonly DataAccess DataAccess = new DataAccess();
+        private readonly DataAccess _dataAccess = new DataAccess();
 
         public static void ShowAddDay()
         {
@@ -30,28 +30,28 @@ namespace MoodTrackerLib.Implementation.Console.Views
             switch (userInput)
             {
                 case 1:
-                    DataAccess.AddDay(new Day(10));
+                    _dataAccess.AddDay(new Day(10));
                     DayAddedMsg(Day.DayMood.Excellent);
                     break;
                 case 2:
-                    DataAccess.AddDay(new Day(7.5));
+                    _dataAccess.AddDay(new Day(7.5));
                     DayAddedMsg(Day.DayMood.Good);
                     break;
                 case 3:
-                    DataAccess.AddDay(new Day(5));
+                    _dataAccess.AddDay(new Day(5));
                     DayAddedMsg(Day.DayMood.Decent);
                     break;
                 case 4:
-                    DataAccess.AddDay(new Day(3.5));
+                    _dataAccess.AddDay(new Day(3.5));
                     DayAddedMsg(Day.DayMood.Meh);
                     break;
                 case 5:
-                    DataAccess.AddDay(new Day(1));
+                    _dataAccess.AddDay(new Day(1));
                     DayAddedMsg(Day.DayMood.Bad);
                     break;
                 case 6:
                     // Change date option
-                    DataAccess.RemoveLastDayEntry(); // temporary, can remove.
+                    _dataAccess.RemoveLastDayEntry(); // temporary, can remove.
                     break;
                     //throw new NotImplementedException();
                 case 7:

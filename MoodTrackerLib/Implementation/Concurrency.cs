@@ -37,7 +37,7 @@ namespace MoodTrackerLib.Implementation
 
         public static void SaveDaysToJson(List<IDay> days)
         {
-            // TODO: Save Days to Json
+            CheckIfDirExists();
             string json = JsonSerializer.Serialize(days);
             using StreamWriter sw = File.CreateText(FilePath);
             sw.AutoFlush = true;

@@ -10,7 +10,6 @@ namespace MoodTrackerLib.Implementation
 {
     public class DataAccess
     {
-        private static readonly Concurrency Concurrency = new Concurrency();
         private static readonly List<IDay> Days = Concurrency.LoadDaysFromJson();
         // this class should take data and make stats out of it, so it can be used in the application.
 
