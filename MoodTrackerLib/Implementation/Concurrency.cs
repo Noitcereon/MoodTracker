@@ -47,9 +47,10 @@ namespace MoodTrackerLib.Implementation
         public static void BackupOldData(List<IDay> oldData)
         {
             CheckIfDirExists();
+            string json = JsonSerializer.Serialize(oldData);
             using StreamWriter sw = File.CreateText(DirPath + "/moodStatsOldData.json");
             sw.AutoFlush = true;
-            sw.Write(oldData);
+            sw.Write(json);
         }
 
         private static void CheckIfDirExists()
