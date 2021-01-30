@@ -26,28 +26,28 @@ namespace MoodTrackerLib.Implementation.Console.Views
         public ConsoleDisplay.View AddDaySelection()
         {
             int userInput = UserInput.OptionSelection();
-
+            bool success = false;
             switch (userInput)
             {
                 case 1:
-                    _dataAccess.AddDay(new Day(10));
-                    DayAddedMsg(Day.DayMood.Excellent);
+                    success =_dataAccess.AddDay(new Day(10));
+                    DayAddedMsg(Day.DayMood.Excellent, success);
                     break;
                 case 2:
-                    _dataAccess.AddDay(new Day(7.5));
-                    DayAddedMsg(Day.DayMood.Good);
+                    success =_dataAccess.AddDay(new Day(7.5));
+                    DayAddedMsg(Day.DayMood.Good, success);
                     break;
                 case 3:
-                    _dataAccess.AddDay(new Day(5));
-                    DayAddedMsg(Day.DayMood.Decent);
+                    success =_dataAccess.AddDay(new Day(5));
+                    DayAddedMsg(Day.DayMood.Decent, success);
                     break;
                 case 4:
-                    _dataAccess.AddDay(new Day(3.5));
-                    DayAddedMsg(Day.DayMood.Meh);
+                    success = _dataAccess.AddDay(new Day(3.5));
+                    DayAddedMsg(Day.DayMood.Meh, success);
                     break;
                 case 5:
-                    _dataAccess.AddDay(new Day(1));
-                    DayAddedMsg(Day.DayMood.Bad);
+                    success = _dataAccess.AddDay(new Day(1));
+                    DayAddedMsg(Day.DayMood.Bad, success);
                     break;
                 case 6:
                     // Change date option
@@ -65,9 +65,13 @@ namespace MoodTrackerLib.Implementation.Console.Views
             return ConsoleDisplay.View.Main;
         }
 
-        private void DayAddedMsg(Day.DayMood mood)
+        private void DayAddedMsg(Day.DayMood mood, bool dayWasAdded)
         {
-            WriteLine($"{mood} day added. Press any key redirect to continue (redirect to main menu.)");
+            if (dayWasAdded)
+            {
+                WriteLine($"{mood} day added.");
+            }
+            WriteLine($"Press any key redirect to continue (redirect to main menu.)");
             ReadKey();
         }
     }

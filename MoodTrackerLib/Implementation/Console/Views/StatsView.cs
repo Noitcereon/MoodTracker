@@ -35,6 +35,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
             }
             catch (Exception e)
             {
+                WriteLine("An error occurred, but the app will keep running. Send this to the developer if you want to problem solved: ");
                 WriteLine(e.Message);
                 WriteLine();
                 WriteLine(e.StackTrace);

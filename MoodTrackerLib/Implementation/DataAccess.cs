@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using MoodTrackerLib.Implementation.Console;
 using MoodTrackerLib.Interfaces;
@@ -33,9 +35,13 @@ namespace MoodTrackerLib.Implementation
                 if (beforeAdd < _days.Count) success = true;
                 return success;
             }
-            catch (Exception e)
+            catch
             {
-                System.Console.WriteLine(e);
+                System.Console.WriteLine("An error occurred while trying to Add Day. \n" +
+                                         "Program will now crash... \n" +
+                                         "(known bug: first time you add a day the app crashes.)");
+                System.Console.WriteLine();
+                Thread.Sleep(5000);
                 throw;
             }
         }

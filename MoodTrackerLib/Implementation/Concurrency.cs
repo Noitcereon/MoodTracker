@@ -20,7 +20,6 @@ namespace MoodTrackerLib.Implementation
 
         public static List<IDay> LoadDaysFromJson()
         {
-            
             CheckIfDirExists();
 
             // TODO: it might be better to use StreamReader, but can't be bothered looking into how it should be done atm.
