@@ -23,11 +23,11 @@ namespace MoodTrackerLib.Implementation
             try
             {
                 RemoveOldEntryIfTheSameDay();
+
                 bool success = false;
                 int beforeAdd = Days.Count;
                 Days.Add(day);
 
-                // TODO: Save to file
                 Concurrency.SaveDaysToJson(Days);
                 if (beforeAdd < Days.Count) success = true;
                 return success;
