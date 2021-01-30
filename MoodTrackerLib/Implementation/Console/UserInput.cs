@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using static MoodTrackerLib.Implementation.Console.ConsoleDisplay;
 
 namespace MoodTrackerLib.Implementation.Console
@@ -21,6 +22,28 @@ namespace MoodTrackerLib.Implementation.Console
             }
 
             return -1;
+        }
+
+        public static bool Confirmation()
+        {
+            try
+            {
+                System.Console.WriteLine("Press 'y' or 'n' to confirm or cancel.");
+                string input = System.Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(input)) return false;
+                if (input.Equals("y")) return true;
+                if (input.Equals("n")) return false;
+
+                System.Console.WriteLine("Press 'y' or 'n'...");
+                Confirmation();
+            }
+            catch
+            {
+                System.Console.WriteLine("Something went wrong. Press any button to return to Main Menu.");
+                System.Console.ReadKey();
+            }
+
+            throw new ArgumentException("Something went wrong in the Confirmation dialogue");
         }
     }
 }

@@ -24,8 +24,7 @@ namespace MoodTrackerLib.Implementation
             CheckIfDirExists();
 
             // TODO: it might be better to use FileStream, but can't be bothered figuring out how it works.
-            //using FileStream fs = File.OpenRead(filePath);
-            //fs.
+            using StreamReader sr = new StreamReader(FilePath);
             byte[] fileBytes = File.ReadAllBytes(FilePath);
             string json = Encoding.UTF8.GetString(fileBytes);
 
@@ -43,6 +42,14 @@ namespace MoodTrackerLib.Implementation
             using StreamWriter sw = File.CreateText(FilePath);
             sw.AutoFlush = true;
             sw.Write(json);
+        }
+
+        public static void BackupOldData(List<IDay> oldData)
+        {
+            CheckIfDirExists();
+            using StreamWriter sw = File.CreateText(DirPath + "/moodStatsOldData.json");
+            sw.AutoFlush = true;
+            sw.Write(oldData);
         }
 
         private static void CheckIfDirExists()

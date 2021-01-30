@@ -9,7 +9,7 @@ namespace MoodTrackerLib.Implementation.Console
     public class Helpers
     {
         /// <summary>
-        /// Encapsulates a message with --- on both sides.
+        /// Encapsulates a message with --- on both sides. Like so: --- {message} ---
         /// </summary>
         /// <param name="message"></param>
         public static void HighlightMessage(string message)

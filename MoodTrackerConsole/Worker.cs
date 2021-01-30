@@ -14,10 +14,5 @@ namespace MoodTrackerConsole
         {
             Display.StartUp();
         }
-
-        public void Close()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
