@@ -15,6 +15,10 @@ namespace MoodTrackerLib.Implementation.Console.Views
             MainMenuView.ShowMainMenu();
         }
 
-        
+
+        public static ConsoleDisplay.View OptionsSelection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -38,7 +38,7 @@ namespace MoodTrackerLib.Implementation.Console
                         break;
                     case View.Stats:
                         StatsView.ShowStats();
-                        StatsView.StatsSelection();
+                        _currentView = StatsView.StatsSelection();
                         break;
                     case View.AddDay:
                         AddDayView.ShowAddDay();
@@ -46,7 +46,7 @@ namespace MoodTrackerLib.Implementation.Console
                         break;
                     case View.Options:
                         OptionsView.ShowOptions();;
-                        //OptionsVM.OptionsSelection();
+                        _currentView = OptionsView.OptionsSelection();
                         break;
                     default:
                         WriteLine("Invalid input.");
