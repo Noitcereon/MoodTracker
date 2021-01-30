@@ -37,6 +37,9 @@ namespace MoodTrackerLib.Implementation.Console.Views
                 case View.Options:
                     OptionsView.ShowOptions();
                     break;
+                case View.Exit:
+                    Environment.Exit(0);
+                    break;
                 default:
                     WriteLine("That number is not assigned to a command. Try again.\n");
                     selectedView = MainMenuSelection(UserInput.OptionSelection());

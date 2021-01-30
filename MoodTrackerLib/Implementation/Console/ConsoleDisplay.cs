@@ -6,7 +6,7 @@ namespace MoodTrackerLib.Implementation.Console
 {
     public class ConsoleDisplay : BaseDisplay
     {
-        public enum View { Main = 1, Stats, AddDay, Options }
+        public enum View { Main = 1, Stats, AddDay, Options, Exit }
 
         private static View _currentView;
         private readonly AddDayView _addDayView = new AddDayView();
