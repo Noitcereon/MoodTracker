@@ -23,8 +23,10 @@ namespace MoodTrackerLib.Implementation
             
             CheckIfDirExists();
 
-            // TODO: it might be better to use FileStream, but can't be bothered figuring out how it works.
-            using StreamReader sr = new StreamReader(FilePath);
+            // TODO: it might be better to use StreamReader, but can't be bothered looking into how it should be done atm.
+            //using StreamReader sr = new StreamReader(FilePath);
+            //sr.ReadLine();
+
             byte[] fileBytes = File.ReadAllBytes(FilePath);
             string json = Encoding.UTF8.GetString(fileBytes);
 
