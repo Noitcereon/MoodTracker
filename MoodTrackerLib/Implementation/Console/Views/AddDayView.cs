@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using MoodTrackerLib.Interfaces;
 using MoodTrackerLib.Models;
 using static System.Console;
 
@@ -12,12 +13,14 @@ namespace MoodTrackerLib.Implementation.Console.Views
 {
     public class AddDayView
     {
-        private readonly DataAccess _dataAccess = new DataAccess();
+        private static readonly DataAccess DataAccess = new DataAccess();
 
         public static void ShowAddDay()
         {
+            List<IDay> days = DataAccess.GetDays();
             Helpers.HighlightMessage("Add Day");
             WriteLine($"Current date: {DateTime.Now.Date.ToShortDateString()}");
+            if(days.Count > 0) WriteLine($"Last added on: {days.Last().Date:d}");
             WriteLine();
             Helpers.CreateOptions(Enum.GetNames(typeof(Day.DayMood)),  "Main Menu");
             WriteLine();
@@ -30,23 +33,23 @@ namespace MoodTrackerLib.Implementation.Console.Views
             switch (userInput)
             {
                 case 1:
-                    success =_dataAccess.AddDay(new Day(10));
+                    success =DataAccess.AddDay(new Day(10));
                     DayAddedMsg(Day.DayMood.Excellent, success);
                     break;
                 case 2:
-                    success =_dataAccess.AddDay(new Day(7.5));
+                    success =DataAccess.AddDay(new Day(7.5));
                     DayAddedMsg(Day.DayMood.Good, success);
                     break;
                 case 3:
-                    success =_dataAccess.AddDay(new Day(5));
+                    success =DataAccess.AddDay(new Day(5));
                     DayAddedMsg(Day.DayMood.Decent, success);
                     break;
                 case 4:
-                    success = _dataAccess.AddDay(new Day(3.5));
+                    success = DataAccess.AddDay(new Day(3.5));
                     DayAddedMsg(Day.DayMood.Meh, success);
                     break;
                 case 5:
-                    success = _dataAccess.AddDay(new Day(1));
+                    success = DataAccess.AddDay(new Day(1));
                     DayAddedMsg(Day.DayMood.Bad, success);
                     break;
                 case 6:
