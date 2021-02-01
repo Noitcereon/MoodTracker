@@ -19,7 +19,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
             Helpers.HighlightMessage("Add Day");
             WriteLine($"Current date: {DateTime.Now.Date.ToShortDateString()}");
             WriteLine();
-            Helpers.CreateOptions(Enum.GetNames(typeof(Day.DayMood)), "Change Date", "Main Menu");
+            Helpers.CreateOptions(Enum.GetNames(typeof(Day.DayMood)),  "Main Menu");
             WriteLine();
         }
 
@@ -50,11 +50,6 @@ namespace MoodTrackerLib.Implementation.Console.Views
                     DayAddedMsg(Day.DayMood.Bad, success);
                     break;
                 case 6:
-                    // Change date option
-                    _dataAccess.RemoveLastDayEntry(); // temporary, can remove.
-                    break;
-                    //throw new NotImplementedException();
-                case 7:
                     return ConsoleDisplay.View.Main;
                 default:
                     WriteLine("Invalid input for AddDay, try again.");

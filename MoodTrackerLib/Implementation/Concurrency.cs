@@ -58,7 +58,7 @@ namespace MoodTrackerLib.Implementation
         {
             if (Directory.Exists(DirPath)) return;
             Directory.CreateDirectory(DirPath);
-            File.Create(FilePath);
+            using FileStream fs = File.Create(FilePath);
         }
     }
 }
