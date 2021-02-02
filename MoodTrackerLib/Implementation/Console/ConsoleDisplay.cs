@@ -45,7 +45,7 @@ namespace MoodTrackerLib.Implementation.Console
                         _currentView = _addDayView.AddDaySelection();
                         break;
                     case View.Options:
-                        OptionsView.ShowOptions();;
+                        OptionsView.ShowOptions();
                         _currentView = OptionsView.OptionsSelection();
                         break;
                     default:
