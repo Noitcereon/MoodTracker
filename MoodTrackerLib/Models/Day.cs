@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,22 +32,22 @@ namespace MoodTrackerLib.Models
             }
         }
 
-        public DayMood Mood { get; }
+        public DayMood Mood => DetermineMood();
 
-        public Day() { }
+
+        public Day()
+        {
+        }
 
         public Day(double points)
         {
             Date = DateTimeOffset.Now.AddHours(-4);
             Points = points;
-            Mood = DetermineMood();
-
         }
         public Day(DateTimeOffset date, double points)
         {
             Date = date;
             Points = points;
-            Mood = DetermineMood();
         }
 
         public override string ToString()

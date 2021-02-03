@@ -24,8 +24,8 @@ namespace MoodTrackerLib.Implementation.Console.Views
                     WriteLine("No data to show stats from."); 
                     return;
                 }
+                WriteLine($"Average day: {Math.Round(days.Average(x => x.Points), 2)} (based on a 1 to 10 point system)");
                 WriteLine($"Total day entries: {days.Count}");
-                WriteLine($"Average day: {days.Average(x => x.Points)} (based on a 1 to 10 point system)");
                 WriteLine($"Excellent days: {days.Count(x => x.Mood == Day.DayMood.Excellent)}");
                 WriteLine($"Good days: {days.Count(x => x.Mood == Day.DayMood.Good)}");
                 WriteLine($"Decent days: {days.Count(x => x.Mood == Day.DayMood.Decent)}");
