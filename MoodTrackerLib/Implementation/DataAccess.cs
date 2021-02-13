@@ -11,10 +11,12 @@ using MoodTrackerLib.Models;
 
 namespace MoodTrackerLib.Implementation
 {
+    /// <summary>
+    /// Retrieves, adds, (updates) and removes data.
+    /// </summary>
     public class DataAccess
     {
         private static List<IDay> _days = Concurrency.LoadDaysFromJson();
-        // this class should take data and make stats out of it, so it can be used in the application.
 
         public List<IDay> GetDays()
         {
@@ -40,7 +42,7 @@ namespace MoodTrackerLib.Implementation
                 System.Console.WriteLine("An error occurred while trying to Add Day. \n" +
                                          "Program will now crash... \n");
                                          
-                // BUG: application crashes if moodStats.json has not been created. (should be fixed now)
+                // BUG: application crashes if moodStats.json has not been created. (should be fixed now, but leaving it here for now.)
                 System.Console.WriteLine();
                 Thread.Sleep(5000);
                 throw;
