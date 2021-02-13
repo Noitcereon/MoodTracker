@@ -38,8 +38,9 @@ namespace MoodTrackerLib.Implementation
             catch
             {
                 System.Console.WriteLine("An error occurred while trying to Add Day. \n" +
-                                         "Program will now crash... \n" +
-                                         "(known bug: first time you add a day the app crashes.)");
+                                         "Program will now crash... \n");
+                                         
+                // BUG: application crashes if moodStats.json has not been created. (should be fixed now)
                 System.Console.WriteLine();
                 Thread.Sleep(5000);
                 throw;

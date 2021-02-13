@@ -45,7 +45,7 @@ namespace MoodTrackerTests
         [TestMethod]
         public void RemoveOldEntryIfSameDayTest()
         {
-            // TODO: RemoveOldEntryIfSameDay test
+            // TODO: RemoveOldEntryIfSameDay Test
             // 1. If Days contains an entry for today it should return true
             // 2. if Not, it should return true.
             // 3. If Days conatain an entry for today and it fails to remove it, it should return false.

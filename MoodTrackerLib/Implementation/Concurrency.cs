@@ -56,9 +56,14 @@ namespace MoodTrackerLib.Implementation
 
         private static void CheckIfDirExists()
         {
-            if (Directory.Exists(DirPath)) return;
+            if (Directory.Exists(DirPath) && File.Exists(FilePath)) return;
+            if (Directory.Exists(DirPath))
+            {
+                using FileStream fs = File.Create(FilePath);
+                return;
+            }
             Directory.CreateDirectory(DirPath);
-            using FileStream fs = File.Create(FilePath);
+            
         }
     }
 }

@@ -19,10 +19,10 @@ namespace MoodTrackerLib.Implementation.Console.Views
         {
             List<IDay> days = DataAccess.GetDays();
             Helpers.HighlightMessage("Add Day");
-            WriteLine($"Current date: {DateTime.Now.Date.ToShortDateString()}");
+            WriteLine($"Current date: { DateTime.Now.Date.ToShortDateString()}");
             if(days.Count > 0) WriteLine($"Last added on: {days.Last().Date:d}");
             WriteLine();
-            Helpers.CreateOptions(Enum.GetNames(typeof(Day.DayMood)),  "Main Menu");
+            Helpers.CreateOptions(Enum.GetNames(typeof(Day.DayMood)), "Main Menu");
             WriteLine();
         }
 
