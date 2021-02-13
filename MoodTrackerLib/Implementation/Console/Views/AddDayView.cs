@@ -26,7 +26,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
             WriteLine();
         }
 
-        public ConsoleDisplay.View AddDaySelection()
+        public static ConsoleDisplay.View AddDaySelection()
         {
             int userInput = UserInput.OptionSelection();
             bool success = false;
@@ -63,7 +63,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
             return ConsoleDisplay.View.Main;
         }
 
-        private void DayAddedMsg(Day.DayMood mood, bool dayWasAdded)
+        private static void DayAddedMsg(Day.DayMood mood, bool dayWasAdded)
         {
             if (dayWasAdded)
             {

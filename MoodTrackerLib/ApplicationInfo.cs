@@ -11,7 +11,10 @@ namespace MoodTrackerLib
     /// </summary>
     public class ApplicationInfo
     {
-        // Initial release was 1.00 (each release will increase the Version by 0.01)
+        // Initial release was 1.00
+        // Small release updates will increase the Version by 0.01
+        // Feature release updates will increase the Version by 0.10
+        // Major release will increase the Version by 1.00
         public const string Version = "1.02";
 
     }

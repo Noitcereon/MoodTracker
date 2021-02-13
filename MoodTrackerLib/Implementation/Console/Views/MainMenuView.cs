@@ -10,6 +10,7 @@ namespace MoodTrackerLib.Implementation.Console.Views
 {
     public static class MainMenuView
     {
+
         public static void ShowMainMenu()
         {
             Helpers.HighlightMessage("Main Menu");
