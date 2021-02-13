@@ -13,7 +13,7 @@ namespace MoodTrackerLib.Implementation.Console
 
         public override void StartUp()
         {
-            Title = "Mood Tracker by Noitcereon";
+            Title = $"Mood Tracker {ApplicationInfo.Version} by Noitcereon ";
             MainMenuView.ShowMainMenu();
             _currentView = MainMenuView.MainMenuSelection(UserInput.OptionSelection());
 
@@ -56,6 +56,6 @@ namespace MoodTrackerLib.Implementation.Console
             }
         }
 
-        
+
     }
 }
