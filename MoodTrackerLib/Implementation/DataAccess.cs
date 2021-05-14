@@ -16,7 +16,7 @@ namespace MoodTrackerLib.Implementation
     /// </summary>
     public class DataAccess
     {
-        private static List<IDay> _days = Concurrency.LoadDaysFromJson();
+        private static List<IDay> _days = JsonData.LoadDaysFromJson();
 
         public List<IDay> GetDays()
         {
@@ -33,7 +33,7 @@ namespace MoodTrackerLib.Implementation
                 int beforeAdd = _days.Count;
                 _days.Add(day);
 
-                Concurrency.SaveDaysToJson(_days);
+                JsonData.SaveDaysToJson(_days);
                 if (beforeAdd < _days.Count) success = true;
                 return success;
             }
@@ -65,9 +65,9 @@ namespace MoodTrackerLib.Implementation
             bool willReset = UserInput.Confirmation();
             if (willReset)
             {
-                Concurrency.BackupOldData(_days);
+                JsonData.BackupOldData(_days);
                 _days = new List<IDay>();
-                Concurrency.SaveDaysToJson(_days);
+                JsonData.SaveDaysToJson(_days);
             }
 
             return willReset;

@@ -11,7 +11,7 @@ using MoodTrackerLib.Models;
 
 namespace MoodTrackerLib.Implementation
 {
-    public class Concurrency
+    public class JsonData
     {
         private const string FileName = "moodStats.json";
 
