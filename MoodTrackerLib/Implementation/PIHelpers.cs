@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace MoodTrackerLib.Implementation
 {
-    // PIHelpers = Platform Independent Helpers
+    /// <summary>
+    /// PIHelpers = Platform Independent Helpers
+    /// </summary>
     public static class PIHelpers
     {
         public static bool IsToday(DateTimeOffset date)
