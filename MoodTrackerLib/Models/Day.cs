@@ -15,9 +15,11 @@ namespace MoodTrackerLib.Models
 
         private double _points;
 
+        [Required]
         public DateTimeOffset Date { get; set; }
 
-        [Range(0.0, 10.0)]
+        [Required]
+        [Range(1.0, 10.0)]
         public double Points
         {
             get => _points;
