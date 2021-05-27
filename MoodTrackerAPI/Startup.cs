@@ -28,6 +28,7 @@ namespace MoodTrackerAPI
         {
 
             services.AddControllers();
+            services.AddCors();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MoodTrackerAPI", Version = "v1" });
@@ -47,6 +48,8 @@ namespace MoodTrackerAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(config => { config.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); });
 
             app.UseAuthorization();
 
