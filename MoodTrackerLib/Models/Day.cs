@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace MoodTrackerLib.Models
 
         public DateTimeOffset Date { get; set; }
 
+        [Range(0.0, 10.0)]
         public double Points
         {
             get => _points;
