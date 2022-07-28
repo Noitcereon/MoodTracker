@@ -5,13 +5,20 @@ It was made with the purpose of learning about file handling in C#. Thus it's da
 
 This repository contains:
 - MoodTracker Console App: the original 'UI', fully functional.
-- MoodTracker Library: Contains most of the code.
+- MoodTracker Library: Contains most of the code and is used by the other projects.
 - MoodTracker Rest API: Made with the intention of easing the development of a potential web app.
 - MoodTracker Test project: Contains any tests I've made for the project.
 
 ## Installation
 
-[To-do]
+To install MoodTracker:
+
+1. Navigate to the [latest release](https://github.com/Noitcereon/MoodTracker/releases).
+2. Download the `MoodTracker.v0.1.0.7z` (note: 7Zip or another archiver that can extract from .7z files is required).
+3. Extract the contents of the file you just download to the place you want MoodTracker installed on your pc.
+4. Go inside the extracted folder (MoodTracker v0.1.0) and run `MoodTrackerConsole.exe`.
+
+This concludes the installation process.
 
 ## Usage
 
