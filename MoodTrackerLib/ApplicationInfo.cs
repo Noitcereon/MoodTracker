@@ -13,11 +13,11 @@ namespace MoodTrackerLib
     {
 
         /// <summary>
-        /// <para>Initial release was 1.00</para>
-        /// <para>Small releases  will increase the Version by 0.01</para>
-        /// <para>Feature releases will increase the Version by 0.10</para>
-        /// <para>Major release will increase the Version by 1.00</para>
+        /// Semantic Versioning is used. See <see href="https://semver.org/spec/v2.0.0.html">SemVer 2.0.0</see> 
+        /// <para>Patch releases  will increase the Version by 0.0.1</para>
+        /// <para>Feature releases will increase the Version by 0.1.0</para>
+        /// <para>Major release will increase the Version by 1.0.0</para>
         /// </summary>
-        public const string Version = "1.12";
+        public const string Version = "1.1.2";
     }
 }
