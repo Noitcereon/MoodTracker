@@ -19,7 +19,7 @@ Once you have installed the app it is fairly simple to use.
 
 When you start up the console app you should be presented with this console window:
 
-![image](https://user-images.githubusercontent.com/40148361/181502625-2ef5141c-8fb1-48ac-a0c7-fcf1dba3e215.png)
+![image](https://user-images.githubusercontent.com/40148361/181511064-aeb5ae94-9e5b-455b-8d52-2d7f12b38d60.png)
 
 After this you simply enter a number, according to the action you want to take, and press ENTER. 
 
@@ -31,7 +31,7 @@ You see the menu screen and want to see your stats.
 1. Write the number '2' as input
 2. Press ENTER
 
-![image](https://user-images.githubusercontent.com/40148361/181503236-e6dd78e1-a253-4143-be37-7050f6282da7.png)
+![image](https://user-images.githubusercontent.com/40148361/181511206-24864755-2efd-43ec-98ba-1bcc09b5db66.png)
 
 If you have any data in your system this screen will show. Otherwise you'll get a message saying no data is found.
 
