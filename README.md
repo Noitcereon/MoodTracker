@@ -10,6 +10,7 @@ This repository contains:
 - MoodTracker Test project: Contains any tests I've made for the project.
 
 ## Installation
+NOTE: I think it only works on 64-bit Windows machines, but I haven't tried installing it on other OSs.
 
 To install MoodTracker:
 
