@@ -8,10 +8,4 @@
     <PackageReference Include="NLog" Version="5.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="nlog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
