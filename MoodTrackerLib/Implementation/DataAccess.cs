@@ -17,7 +17,7 @@ namespace MoodTrackerLib.Implementation
     /// </summary>
     public class DataAccess
     {
-        private static ILogger _logger = LogManager.GetCurrentClassLogger();
+        private static readonly ILogger _logger = LogManager.GetCurrentClassLogger();
         private static List<IDay> _days = JsonData.LoadDaysFromJson();
 
         public List<IDay> GetDays()
@@ -29,6 +29,7 @@ namespace MoodTrackerLib.Implementation
         {
             try
             {
+                _logger.Debug("Attempting to add Day: {day}", day);
                 RemoveOldEntryIfTheSameDay();
 
                 bool success = false;
@@ -63,15 +64,18 @@ namespace MoodTrackerLib.Implementation
 
         public bool RemoveOldEntryIfTheSameDay()
         {
+            _logger.Debug("RemoveOldEntryIfTheSameDay() called");
             IDay oldDay = _days.Find(x => PIHelpers.IsToday(x.Date));
             return oldDay == null || _days.Remove(oldDay);
         }
 
         public bool ResetStats()
         {
+            _logger.Debug("ResetStats() called. Awaiting confirmation from user");
             bool willReset = UserInput.Confirmation();
             if (willReset)
             {
+                _logger.Debug("Resetting stats");
                 JsonData.BackupOldData(_days);
                 _days = new List<IDay>();
                 JsonData.SaveDaysToJson(_days);
