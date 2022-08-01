@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
 using MoodTrackerLib.Interfaces;
 using MoodTrackerLib.Models;
 using NLog;
@@ -18,7 +15,7 @@ namespace MoodTrackerLib.Implementation
 
         private static readonly string DirPath = Directory.GetCurrentDirectory() + "/Data";
         private static readonly string FilePath = DirPath + $"/{FileName}";
-        private static ILogger _logger = LogManager.GetCurrentClassLogger();
+        private static readonly ILogger _logger = LogManager.GetCurrentClassLogger();
 
         public static List<IDay> LoadDaysFromJson()
         {
