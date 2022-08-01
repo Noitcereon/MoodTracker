@@ -18,6 +18,6 @@ namespace MoodTrackerLib
         /// <para>Feature releases will increase the Version by 0.1.0</para>
         /// <para>Major release will increase the Version by 1.0.0</para>
         /// </summary>
-        public const string Version = "0.1.0";
+        public const string Version = "0.2.0";
     }
 }
