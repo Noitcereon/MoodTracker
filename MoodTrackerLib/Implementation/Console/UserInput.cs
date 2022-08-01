@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Threading;
-using static MoodTrackerLib.Implementation.Console.ConsoleDisplay;
 
 namespace MoodTrackerLib.Implementation.Console
 {
