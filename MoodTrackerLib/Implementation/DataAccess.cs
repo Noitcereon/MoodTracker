@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using MoodTrackerLib.Implementation.Console;
 using MoodTrackerLib.Interfaces;
 using MoodTrackerLib.Models;
+using NLog;
 
 namespace MoodTrackerLib.Implementation
 {
@@ -16,6 +17,7 @@ namespace MoodTrackerLib.Implementation
     /// </summary>
     public class DataAccess
     {
+        private static ILogger _logger = LogManager.GetCurrentClassLogger();
         private static List<IDay> _days = JsonData.LoadDaysFromJson();
 
         public List<IDay> GetDays()
@@ -39,7 +41,7 @@ namespace MoodTrackerLib.Implementation
             }
             catch
             {
-                System.Console.WriteLine("An error occurred while trying to Add Day. \n" +
+                _logger.Fatal("An error occurred while trying to Add Day. \n" +
                                          "Program will now crash... \n");
                                          
                 // BUG: application crashes if moodStats.json has not been created. (should be fixed now, but leaving it here for now.)
@@ -47,10 +49,15 @@ namespace MoodTrackerLib.Implementation
                 Thread.Sleep(5000);
                 throw;
             }
+            finally
+            {
+                LogManager.Shutdown();
+            }
         }
 
         public void RemoveLastDayEntry()
         {
+            _logger.Debug("RemoveLastDayEntry() called.");
             _days.RemoveAt(_days.Count-1);
         }
 

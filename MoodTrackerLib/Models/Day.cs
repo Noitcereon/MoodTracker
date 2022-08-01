@@ -6,14 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MoodTrackerLib.Interfaces;
+using NLog;
 
 namespace MoodTrackerLib.Models
 {
     public class Day : IDay
     {
         public enum DayMood { Excellent = 1, Good, Decent, Meh, Bad }
-
+        
         private double _points;
+        private static ILogger _logger = LogManager.GetCurrentClassLogger();
 
         [Required]
         public DateTimeOffset Date { get; set; }
@@ -31,6 +33,7 @@ namespace MoodTrackerLib.Models
                 }
                 else
                 {
+                    _logger.Warn("Invalid value entered for Day._points: {value}. Value should be between 1-10.", value);
                     throw new ArgumentOutOfRangeException(paramName: $"_points");
                 }
             }
