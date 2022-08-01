@@ -17,7 +17,7 @@ To install MoodTracker:
 1. Navigate to the [latest release](https://github.com/Noitcereon/MoodTracker/releases).
 2. Download the `MoodTracker.v0.1.0.7z` (note: 7Zip or another archiver that can extract from .7z files is required).
 3. Extract the contents of the file you just download to the place you want MoodTracker installed on your pc.
-4. Go inside the extracted folder (MoodTracker v0.1.0) and run `MoodTrackerConsole.exe`.
+4. Go inside the extracted folder (MoodTracker v0.2.0) and run `MoodTrackerConsole.exe`.
 
 This concludes the installation process.
 
